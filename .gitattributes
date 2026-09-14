@@ -1,0 +1,15 @@
+# ─────────────────────────────────────────────────────────────────────
+#  本 fork 自有文件的换行符约定
+# ---------------------------------------------------------------------
+#  只作用于 scripts/fork/ 目录，不改变任何上游文件的属性，
+#  因此不会引起上游文件的 renormalize，也就不会产生 tracked diff。
+#
+#  为什么需要：本机 core.autocrlf=true。若不显式指定，.sh 会被检出成
+#  CRLF，Git Bash 执行时报 "bad interpreter: No such file or directory"。
+# ─────────────────────────────────────────────────────────────────────
+
+# 本文件自身固定为 LF
+.gitattributes text eol=lf
+
+scripts/fork/*.sh  text eol=lf
+scripts/fork/*.ps1 text eol=crlf
